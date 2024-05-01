@@ -3,7 +3,7 @@
 
 uploading my project/activities ive done on this subject
 
-you can see all my project on other branches.
+you can see all my projects on the branch tab
 
 it is separated in branches.
 
