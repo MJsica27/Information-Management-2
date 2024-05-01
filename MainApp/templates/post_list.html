@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyWebApp</title>
+    <style>
+        .navbar {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .navbar .navbar-item {
+            text-decoration: none;
+            color: #fff;
+        }
+        .container.post-list {
+            margin-top: 20px;
+        }
+
+        .container.post-list h2 {
+            color: #333;
+        }
+
+        .container.post-list hr {
+            border: 1px solid #333;
+        }
+
+        .post-list-item {
+            margin-bottom: 10px;
+        }
+
+        .post-list-item a {
+            text-decoration: none;
+            color: #333;
+        }
+        h1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+             
+        }
+        h2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+             
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>MyWebApp</h1>
+<br>
+<div class="navbar">
+  <div class="container">
+    <a class="navbar-item" href="#">Home</a>
+    <a class="navbar-item" href="#">About</a>
+    <a class="navbar-item" href="#">Contact</a>
+  </div>
+</div>
+
+<div class="post-list">
+    <h2>Latest Posts</h2>
+    <hr>
+    {% for post in posts %}
+    <div class="item">
+        <strong>Post {{ forloop.counter }}.  </strong> <a href="{% url 'post_detail' post.id %}"> {{ post.title }}</a>
+    </div>
+    {% endfor %}
+</div>
+
+</body>
+</html>

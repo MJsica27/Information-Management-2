@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyWebApp</title>
+    <style>
+        .navbar {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 0;
+        }
+
+        .navbar .container {
+        display: flex;
+        justify-content: space-around;
+        }
+
+        .navbar .navbar-item {
+        text-decoration: none;
+        color: #fff;
+        }
+
+        .container.post-detail {
+        margin-top: 20px;
+        }
+
+        .post-title {
+        color: #333;
+        }
+
+        .post-date {
+        color: #666;
+        font-style: italic;
+        }
+
+        .post-content {
+        margin-top: 20px;
+        }
+
+        .post-content p {
+        margin-bottom: 10px;
+        }
+
+        .post-content a {
+        color: #007bff; 
+        text-decoration: underline;
+        }
+
+        .post-content img {
+        max-width: 100%;  
+        height: auto;
+        margin-bottom: 10px;
+        }
+        h1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>MyWebApp</h1>
+
+<br>
+<div class="navbar">
+  <div class="container">
+    <a class="navbar-item" href="#">Home</a>
+    <a class="navbar-item" href="#">About</a>
+    <a class="navbar-item" href="#">Contact</a>
+  </div>
+</div>
+
+<div class="container post-detail">
+    <h2 class="post-title">{{ post.title }}</h2>
+    <p class="post-date">Posted on: {{ post.date_posted }}</p>
+    <div class="post-content">
+        {{ post.content | safe }}   
+    </div>
+</div>
+
+</body>
+</html>
